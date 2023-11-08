@@ -43,7 +43,7 @@ app.use(cookieParser());
 // );
 
 const corsOptions = {
-  origin: "https://freelancing-wotk.vercel.app", // Replace with your client's origin
+  origin: "https://freelancing-wotk.vercel.app/",
   credentials: true,
 };
 
