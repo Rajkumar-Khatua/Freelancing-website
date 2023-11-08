@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./categories.scss";
-import { QueryClient, QueryClientProvider, useQuery } from "react-query";
+import { useQuery } from "react-query";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-// import { gigs } from "../../data";
 import GigCard from "../../components/GigCard/GigCard";
 import Alert from "@mui/material/Alert";
 import newRequest from "../../utils/newRequest";
@@ -32,10 +31,7 @@ function categories() {
         .then((res) => {
           return res.data;
         }),
-      });
-      console.log(search)
-
-  console.log(data);
+  });
 
   // sort by duration
   useEffect(() => {
