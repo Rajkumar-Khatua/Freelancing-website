@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import "./login.scss";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
 import newRequest from "../../utils/newRequest.js";
 import { CircularProgress } from "@mui/material";
 function login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(false); // Loading state
+  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -20,9 +19,11 @@ function login() {
       const res = await newRequest.post("auth/login", { username, password });
       localStorage.setItem("currentUser", JSON.stringify(res.data));
       navigate("/");
+      console.log(res.data);
     } catch (err) {
       // handling error
       setError(err.response.data);
+      console.log(err.response.data);
     }
     setIsLoading(false);
   };
