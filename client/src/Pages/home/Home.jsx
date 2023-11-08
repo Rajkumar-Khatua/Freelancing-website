@@ -16,7 +16,7 @@ function home() {
   const { isLoading, error, data } = useQuery({
     queryKey: ["myGigs"],
     queryFn: () =>
-      newRequest.get(`/gigs`).then((res) => {
+      newRequest.get(`gigs`).then((res) => {
         return res.data;
       }),
   });

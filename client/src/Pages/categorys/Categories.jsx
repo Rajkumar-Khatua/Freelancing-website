@@ -32,7 +32,8 @@ function categories() {
         .then((res) => {
           return res.data;
         }),
-  });
+      });
+      console.log(search)
 
   console.log(data);
 
