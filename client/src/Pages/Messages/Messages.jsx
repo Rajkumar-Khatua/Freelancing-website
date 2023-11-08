@@ -4,9 +4,9 @@ import "./messages.scss";
 import { Link } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import newRequest from "../../utils/newRequest";
-import { Comment } from "react-loader-spinner";
+// import { Comment } from "react-loader-spinner";
 import moment from "moment";
-import { Alert, AlertTitle } from "@mui/material";
+import { Alert, AlertTitle, CircularProgress } from "@mui/material";
 function Messages() {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
@@ -34,22 +34,23 @@ function Messages() {
   return (
     <div className="messages">
       {isLoading ? (
-        <Comment
-          visible={true}
-          height="80"
-          width="80"
-          ariaLabel="comment-loading"
-          wrapperStyle={{
-            width: "500px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            marginTop: "220px",
-          }}
-          wrapperClass="comment-wrapper"
-          color="#fff"
-          backgroundColor="#0d0d0e"
-        />
+        // <Comment
+        //   visible={true}
+        //   height="80"
+        //   width="80"
+        //   ariaLabel="comment-loading"
+        //   wrapperStyle={{
+        //     width: "500px",
+        //     display: "flex",
+        //     alignItems: "center",
+        //     justifyContent: "center",
+        //     marginTop: "220px",
+        //   }}
+        //   wrapperClass="comment-wrapper"
+        //   color="#fff"
+        //   backgroundColor="#0d0d0e"
+        // />
+        <CircularProgress className="progressBar" size={20} color="inherit" />
       ) : error ? (
         <Alert
           severity="error"
