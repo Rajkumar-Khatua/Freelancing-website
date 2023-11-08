@@ -1,0 +1,95 @@
+$breakpoint-small: 390;
+$breakpoint-medium: 768px;
+$breakpoint-large: 1024px;
+
+@mixin mobile {
+  @media (max-width: 400px) {
+    @content;
+  }
+}
+.messages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .container {
+    width: 1400px;
+    // display: flex;
+    padding: 50px 0px;
+    @include mobile() {
+      width: 100%;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    table {
+      // background-color: #fff;
+      width: 100%;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+      border-radius: 12px;
+      border: none;
+      tr {
+        height: 100px;
+        @include mobile() {
+          font-size: 10px;
+        }
+        th {
+          text-align: center;
+          font-size: 16px;
+          @include mobile() {
+            font-size: 10px;
+          }
+        }
+        td {
+          padding: 10px;
+          text-align: center;
+          @include mobile() {
+            font-size: 10px;
+          }
+          &:first-child {
+            font-weight: 600;
+          }
+          &:nth-child(2),
+          &:nth-child(3) {
+            color: grey;
+          }
+        }
+        button {
+          background-color: #fff;
+          border: none;
+          outline: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 10px;
+          gap: 10px;
+          float: right;
+          border-radius: 6px;
+          box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+            rgba(17, 17, 26, 0.05) 0px 8px 32px;
+          background: #11998e;
+          background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+          background: linear-gradient(to right, #38ef7d, #11998e);
+          cursor: pointer;
+          color: #fff;
+          font-weight: 600;
+
+          .readIcon {
+            color: #1ee63641;
+          }
+          @include mobile() {
+            padding: 10px 0px;
+            font-size: 10px;
+          }
+        }
+        &.active {
+          box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+            rgba(17, 17, 26, 0.05) 0px 8px 32px;
+          background-color: #32885d2f;
+        }
+      }
+    }
+  }
+}

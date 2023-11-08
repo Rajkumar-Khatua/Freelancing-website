@@ -1,0 +1,36 @@
+.projectCard {
+  margin-bottom: 20px;
+  height: 300px;
+  width: 300px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+  }
+  .info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    img {
+      height: 45px;
+      width: 45px;
+      object-fit: cover;
+      border-radius: 30%;
+    }
+    .texts {
+     
+      h2 {
+        font-size: 15px;
+        font-weight: 500;
+      }
+      span {
+      }
+    }
+  }
+}

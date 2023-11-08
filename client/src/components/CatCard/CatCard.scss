@@ -1,0 +1,43 @@
+$breakpoint-small: 390;
+$breakpoint-medium: 768px;
+$breakpoint-large: 1024px;
+
+@mixin mobile {
+  @media (max-width: 400px) {
+    @content;
+  }
+}
+
+.catCard {
+    width: 260px;
+    height: 360px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 12px;
+    // border: 2px solid red;
+    position: relative;
+    @include mobile {
+     
+    }
+
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      position: absolute;
+    }
+    .desc{
+      font-weight: 300;
+      position: absolute;
+      top: 15px;
+      left: 15px;      
+    }
+    .title{
+      font-weight: 500;
+      font-size: 24px;
+      position: absolute;
+      left: 15px;
+      top: 40px;
+    }
+}

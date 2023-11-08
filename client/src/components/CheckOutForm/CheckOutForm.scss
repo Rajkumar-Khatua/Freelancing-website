@@ -1,0 +1,42 @@
+.checkout {
+  width: 1400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  form {
+    border: 1px solid lightgrey;
+    padding: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border-radius: 10px;
+
+    .pay-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      outline: none;
+      border: none;
+      gap: 5px;
+      // height: 200px;
+      margin-top: 10px;
+      width: 100%;
+      background-color: #a09f9f8c;
+      border-radius: 10px;
+      color: #eee;
+      font-weight: bold;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+      cursor: pointer;
+      transition: all .4s ease-in;
+      border: 1px solid rgb(207, 207, 207);
+
+      &:hover {
+        background: #11998e;
+        background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+        background: linear-gradient(to right, #38ef7d, #11998e);
+       
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+$breakpoint-small: 390;
+$breakpoint-medium: 768px;
+$breakpoint-large: 1024px;
+
+@mixin mobile {
+  @media (max-width: 400px) {
+    @content;
+  }
+}
+
+.reviews {
+  margin-top: 50px;
+  h2 {
+  }
+
+  .addReview {
+    background: rgba(23, 44, 42, 0.14);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.3px);
+    -webkit-backdrop-filter: blur(5.3px);
+    border: 1px solid rgba(23, 44, 42, 0.14);
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+      rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid lightgray;
+
+    .reviewTitle {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgb(165, 151, 134);
+    }
+    .addInput {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .reviewInput {
+        padding: 20px;
+        outline: none;
+        border: none;
+
+        border-radius: 10px;
+
+        background: rgba(23, 44, 42, 0.14);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5.3px);
+        -webkit-backdrop-filter: blur(5.3px);
+        border: 1px solid rgba(23, 44, 42, 0.14);
+      }
+      .selected {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        justify-content: space-between;
+        span {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 18px;
+          font-weight: 900;
+          color: gray;
+          @include mobile() {
+            font-size: 15px;
+            justify-content: space-between;
+          }
+
+          .star {
+            font-size: 30px;
+            color: gold;
+          }
+        }
+
+        select {
+          padding: 15px;
+          outline: none;
+          border: none;
+          border-radius: 10px;
+          width: 50%;
+          cursor: pointer;
+          background: rgba(23, 44, 42, 0.14);
+          border-radius: 16px;
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          backdrop-filter: blur(5.3px);
+          -webkit-backdrop-filter: blur(5.3px);
+          border: 1px solid rgba(23, 44, 42, 0.14);
+        }
+      }
+      button {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        justify-content: center;
+        padding: 10px;
+        border: none;
+        outline: none;
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: #000000;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+        text-decoration: none;
+
+        @include mobile() {
+        }
+      }
+    }
+  }
+}

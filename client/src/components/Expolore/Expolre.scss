@@ -1,0 +1,117 @@
+$breakpoint-small: 390;
+$breakpoint-medium: 768px;
+$breakpoint-large: 1024px;
+
+@mixin mobile {
+  @media (max-width: 400px) {
+    @content;
+  }
+}
+
+
+.explore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffffd2;
+  padding: 100px 0px;
+  @include mobile() {
+    padding: 10px;
+  }
+  .container {
+    display: flex;
+    width: 1400px;
+    align-items: center;
+    gap: 200px;
+    @include mobile() {
+      flex-direction: column;
+      padding: 5px;
+      gap: 20px;
+    }
+    .item {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      @include mobile() {
+        align-items: center;
+      }
+      &:first-child {
+        flex: 3;
+      }
+      &:last-child {
+        flex: 3;
+        border-radius: 12px;
+      }
+      h1 {
+        font-size: 24px;
+        font-weight: 900;
+        margin-bottom: 10px;
+        text-decoration: underline;
+        @include mobile() {
+          text-align: center;
+          font-size: 19px;
+        }
+        .NewIcon {
+          font-size: 30px;
+          color: red;
+          @include mobile() {
+            text-align: center;
+            font-size: 30px;
+          }
+        }
+      }
+      .title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        @include mobile() {
+          text-align: center;
+          font-size: 17px;
+          justify-content: center;
+        }
+        font-weight: 500;
+        font-size: 18px;
+        .BatchIcon {
+          color: rgba(40, 182, 111, 0.849);
+          margin-right: 5px;
+        }
+      }
+      p {
+        font-size: 18px;
+        font-weight: 500;
+        color: rgb(255, 255, 255);
+      }
+      img {
+        width: 720px;
+        border-radius: 12px;
+        @include mobile() {
+          width: 100%;
+          // margin-top: 10px;
+        }
+      }
+      p {
+      }
+      .btn {
+        background: #25da85;
+        background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
+        background: linear-gradient(to right, #ff4b2b, #ff416c);
+        padding: 15px 30px;
+        border: none;
+        outline: none;
+        width: max-content;
+        border-radius: 12px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+          font-size: 15px;
+          font-weight: bold;
+          color: #fff;
+          cursor: pointer;
+          
+          &:hover{
+            transition: all 0.5s ease-in;
+            background: linear-gradient(to right, #be402a, #9b0f30);
+          }
+      }
+    }
+  }
+}

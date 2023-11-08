@@ -1,0 +1,83 @@
+$breakpoint-small: 390;
+$breakpoint-medium: 768px;
+$breakpoint-large: 1024px;
+
+@mixin mobile {
+  @media (max-width: 400px) {
+    @content;
+  }
+}
+
+.orders{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .container{
+        width: 1400px;
+        // display: flex;
+        padding: 50px 0px;
+        @include mobile(){
+            width: 100%;
+        }
+        .header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include mobile(){
+                    display: flex;
+                    flex-direction: column;
+                 }
+            button{
+                background-color: #000000;
+                color: #fff;
+                border: none;
+                outline: none;
+                padding: 12px 20px;
+                font-weight: 900;
+                font-size: 16px;
+                border-radius: 5px;
+            }
+        }
+        table{
+            // background-color: #fff;
+            width: 100%;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+            border-radius: 12px;
+            @include mobile(){
+               width: 50%;
+             }
+            tr{
+                box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+                border-radius: 12px;
+                
+                height: 50px;
+                th{
+                    text-align: center;
+                    
+                }
+                td{
+                    text-align: center;
+                    img{
+                        width: 70px;
+                        height: 35px;
+                        object-fit: cover;
+                        border-radius: 5px;
+                    }
+                    .mail{
+                        width: 25px;
+                        cursor: pointer;
+                        color: rgb(14, 161, 93);
+
+                        &:hover{
+                            color: teal;
+                        }
+                    }
+                }
+
+                // &:nth-child(even){
+                //     background-color: #4d5e4f41;
+                // }
+            }
+        }
+    }
+}

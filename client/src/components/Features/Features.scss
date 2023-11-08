@@ -1,0 +1,92 @@
+$breakpoint-small: 390;
+$breakpoint-medium: 768px;
+$breakpoint-large: 1024px;
+
+@mixin mobile {
+  @media (max-width: 400px) {
+    @content;
+  }
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f0f0;
+  padding: 100px 0px;
+  @include mobile() {
+    padding: 10px;
+  }
+  .container {
+    display: flex;
+    width: 1400px;
+    align-items: center;
+    gap: 200px;
+    @include mobile() {
+      flex-direction: column;
+      padding: 5px;
+      gap: 20px;
+    }
+    .item {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      @include mobile() {
+        align-items: center;
+      }
+      &:first-child {
+        flex: 3;
+      }
+      &:last-child {
+        flex: 3;
+        border-radius: 12px;
+      }
+      h1 {
+        font-size: 24px;
+        font-weight: 900;
+        margin-bottom: 10px;
+        @include mobile() {
+          text-align: center;
+          font-size: 18px;
+        }
+      }
+      .title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 500;
+        font-size: 18px;
+        .BatchIcon {
+          color: rgba(26, 99, 99, 0.849);
+          margin-right: 5px;
+        }
+      }
+      p {
+        font-size: 18px;
+        font-weight: 500;
+        color: gray;
+        @include mobile() {
+          font-size: 15px;
+          font-family: 'Alegreya', serif;
+          text-align: center;
+
+        }
+      }
+      video {
+        width: 720px;
+        border-radius: 12px;
+        box-shadow: rgba(34, 34, 51, 0.425) 0px 50px 100px -20px,
+          rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+        @include mobile() {
+          width: 100%;
+          border-radius: 5px;
+          overflow: hidden;
+        }
+      }
+      p {
+      }
+    }
+  }
+}
