@@ -35,12 +35,21 @@ mongoose
 app.use(express.json());
 // cookie parser middle parser
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: "https://freelancing-website-ten.vercel.app",
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: "https://freelancing-website-ten.vercel.app",
+//     credentials: true,
+//   })
+// );
+
+const corsOptions = {
+  origin: "https://freelancing-wotk.vercel.app", // Replace with your client's origin
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+// this middleware to handle preflight requests
+app.options("*", cors(corsOptions));
 
 app.use("/api/auth", auth);
 app.use("/api/users", userRoute);
@@ -63,6 +72,5 @@ const PORT = 5500;
 //   connect();
 //   console.log("Backend is running");
 // });
-
 
 app.listen(PORT, () => console.log(`Server running on port  ${PORT}`));
