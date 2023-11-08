@@ -3,11 +3,8 @@ import "./categories.scss";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 // import { gigs } from "../../data";
-import { CSSProperties } from "react";
-import ClipLoader from "react-spinners/ClipLoader";
 import GigCard from "../../components/GigCard/GigCard";
 import Alert from "@mui/material/Alert";
-import LinearProgress from "@mui/material/LinearProgress";
 import newRequest from "../../utils/newRequest";
 import { useLocation } from "react-router-dom";
 import { CircularProgress } from "@mui/material";
@@ -30,7 +27,7 @@ function categories() {
     queryFn: () =>
       newRequest
         .get(
-          `/gigs${search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sort}`
+          `gigs${search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sort}`
         )
         .then((res) => {
           return res.data;
